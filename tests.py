@@ -23,10 +23,18 @@ class TestCheckPwd(unittest.TestCase):
         self.assertFalse(check_pwd("A1!" + "a" * 18))
 
     """
-    Testing for pwd with missing lowercase letters.
+    Testing for pwd with missing lowercase letter,
+    it should be rejected if there's no lowercase letter.
     """
     def test4(self):
         self.assertFalse(check_pwd("ABC123!@#"))
+
+    """"
+    Testing for pwd with missing uppercase letter,
+    it should be rejected if there's no uppercase letter.
+    """
+    def test5(self):
+        self.assertFalse(check_pwd("abc123!@#"))
 
 if __name__ == "__main__":
     unittest.main()
