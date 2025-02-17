@@ -36,5 +36,12 @@ class TestCheckPwd(unittest.TestCase):
     def test5(self):
         self.assertFalse(check_pwd("abc123!@#"))
 
+    """
+    Testing for pwd with missing digit,
+    it should be rejected if there's no digits.
+    """
+    def test6(self):
+        self.assertFalse(check_pwd("Abc!@#xyz"))
+
 if __name__ == "__main__":
     unittest.main()
