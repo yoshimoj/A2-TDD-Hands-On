@@ -27,6 +27,18 @@ def check_pwd(password: str) -> bool:
         return False
 
     """
+    Allowed symbols copied from Canvas
+    """
+    allowed_symbols = set("~`!@#$%^&*()_+-=")
+
+    """
+    Checks that at least one symbol from the list is present,
+    if none are present it will return False.
+    """
+    if not any(c in allowed_symbols for c in password):
+        return False
+
+    """
     If all tests are passed, return True
     """
     return True
