@@ -13,6 +13,12 @@ def check_pwd(password: str) -> bool:
         return False
 
     """
+    Checks for at least one uppercase letter.
+    """
+    if not any(c.isupper() for c in password):
+        return False
+
+    """
     If all tests are passed, return True
     """
     return True
