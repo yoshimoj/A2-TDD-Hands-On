@@ -56,6 +56,13 @@ class TestCheckPwd(unittest.TestCase):
     """
     def test8(self):
         self.assertFalse(check_pwd("Abc123xyz?"))
+    
+    """
+    Testing for pwd with more than one symbol,
+    it shouldnt be rejected since it meets all the requirements.
+    """
+    def test9(self):
+        self.assertTrue(check_pwd("Abc123!@#$%"))
 
 if __name__ == "__main__":
     unittest.main()
