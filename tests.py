@@ -15,5 +15,12 @@ class TestCheckPwd(unittest.TestCase):
     def test2(self):
         self.assertFalse(check_pwd("A1!bc"))
 
+    """
+    Testing for pwd that's too long,
+    length can't be more than 20 characters.
+    """
+    def test3(self):
+        self.assertFalse(check_pwd("A1!" + "a" * 18))
+
 if __name__ == "__main__":
     unittest.main()
