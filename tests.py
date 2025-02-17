@@ -43,5 +43,19 @@ class TestCheckPwd(unittest.TestCase):
     def test6(self):
         self.assertFalse(check_pwd("Abc!@#xyz"))
 
+    """
+    Testing for pwd without any symbols,
+    it should be rejected if there's no symbols.
+    """
+    def test7(self):
+        self.assertFalse(check_pwd("Abc123xyz"))
+
+    """"
+    Testing for pwd with invalid symbols,
+    it should be rejected if there's no valid symbol.
+    """
+    def test8(self):
+        self.assertFalse(check_pwd("Abc123xyz?"))
+
 if __name__ == "__main__":
     unittest.main()
